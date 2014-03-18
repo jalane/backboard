@@ -9,4 +9,5 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^backboard/errorgen/([0-9]{3})/$', 'errorgen.views.renderError'),
 )
