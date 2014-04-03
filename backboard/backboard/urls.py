@@ -10,5 +10,9 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^backboard/errorgen/([0-9]{3})/$', 'errorgen.views.renderError'),
+    url(r'^backboard/harburetor/$', 'harburetor.views.index'),
+    url(r'^backboard/harburetor/add$', 'harburetor.views.addHar'),
     url(r'^backboard/sahara/$', 'sahara.views.index'),
+    url(r'^backboard/sahara/runScript/([0-9]?)/$', 'sahara.views.runScript'),
+    
 )
