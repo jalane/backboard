@@ -16,8 +16,8 @@ response['Cache-Control']='max-age:3s'
 
 def runScript(request, scriptID):
     dc = DynaScript.objects.get(pk=scriptID)
-    try:
-        exec dc.ScriptCode.replace('\r\n','\n')
-    except:
-        response = HttpResponse("Error: {0}".format(dc.ScriptCode))
-    return response
+    #try:
+    exec dc.ScriptCode.replace('\r\n','\n')
+    #except:
+    response = HttpResponse("Error: {0}<br/>".format(dc.ScriptCode))
+    #return response
