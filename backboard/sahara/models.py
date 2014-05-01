@@ -5,6 +5,10 @@ class Person(models.Model):
     FirstName = models.CharField(max_length=63)
     LastName = models.CharField(max_length=63)
     UserID	= models.CharField(max_length=63)
+    
+    def __unicode__(self):
+        return u'%s. %s' % (self.FirstName[0], self.LastName)
+    
         
 class DynaScript (models.Model):
     ScriptName = models.CharField(max_length=63)
@@ -13,4 +17,5 @@ class DynaScript (models.Model):
     UserID = models.ForeignKey(Person)
     Created = models.DateTimeField(auto_now_add=True)
     
-    
+    def __unicode__(self):
+        return u'%s (%s)' % (self.ScriptName, self.pk)

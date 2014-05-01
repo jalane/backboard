@@ -14,5 +14,6 @@ urlpatterns = patterns('',
     url(r'^backboard/harburetor/add$', 'harburetor.views.addHar'),
     url(r'^backboard/sahara/$', 'sahara.views.index'),
     url(r'^backboard/sahara/runScript/([0-9]?)/$', 'sahara.views.runScript'),
+    url(r'^backboard/sahara/getESI/([0-9]?)/?(.*)/$', 'sahara.views.getESI'),
     
 )
