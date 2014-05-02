@@ -19,7 +19,7 @@ def runScript(request, scriptID):
     #try:
     exec dc.ScriptCode.replace('\r\n','\n')
     #except:
-    response = HttpResponse("Error: {0}<br/>".format(dc.ScriptCode))
+    #response = HttpResponse("Error: {0}<br/>".format(dc.ScriptCode))
     return response
     
 def getESI(request, scriptID, debug="no"):
