@@ -12,8 +12,7 @@ class HarForm(ModelForm):
     class Meta:
         model = Har
         fields = ['DigitalProperty', 'HarContents', 'Description', 'BaseURL']
-
-    
+  
 class HarLine(models.Model):
     HarID = models.ForeignKey(Har)
     RawLine = models.TextField()
@@ -25,3 +24,13 @@ class HarLine(models.Model):
 class Report(models.Model):
 	HarID = models.ForeignKey(Har)
 	ReportName = models.CharField(max_length=511)
+
+class AWKScript(models.Model):
+    ScriptName = models.CharField(max_length=255)
+    ScriptDescription = models.CharField(max_length=1023)
+    ScriptContent = models.TextField()
+    
+class EdgeLogField(models.Model):
+    FieldNumber = models.IntegerField()
+    FieldName = models.CharField(max_length=127)
+    FieldDescription = models.CharField(max_length=1023)
